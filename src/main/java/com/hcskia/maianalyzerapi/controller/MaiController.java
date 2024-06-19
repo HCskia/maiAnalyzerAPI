@@ -12,22 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/mai")
+public class MaiController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping(value = "/test",consumes = "application/json")
-    public User postTest(@RequestBody User user){
-        return user;
-    }
-    //User user = userRepository.findByUserId(loginUser.getUserId());
-    @PostMapping(value = "/login",consumes = "application/json")
+    @PostMapping(value = "/datarefresh",consumes = "application/json")
     public User UserLogin(@RequestBody User loginUser) throws JoseException {
         if ((Objects.equals(loginUser.getUserId(), ""))||(Objects.equals(loginUser.getQq(), ""))){
             User user = new User();
