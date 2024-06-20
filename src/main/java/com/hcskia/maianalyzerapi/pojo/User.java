@@ -10,8 +10,6 @@ public class User{
     private String userId;
     @Column(name = "qq")
     private String qq;
-    @Column(name = "jwttoken")
-    private String JWTtoken;
 
     public String getUserId(){
         return this.userId;
@@ -27,10 +25,4 @@ public class User{
         this.qq = qq;
     }
 
-    public String getJWTtoken(){
-        return this.JWTtoken;
-    }
-    public void setJWTtoken(String JWTtoken){
-        this.JWTtoken = JWTtoken;
-    }
 }
