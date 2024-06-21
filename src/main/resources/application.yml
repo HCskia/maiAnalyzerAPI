@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/-?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&serverTimezone=UTC
-    username: -
-    password: -
+    url: jdbc:mysql://localhost:3306/maimai_analyzer?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&serverTimezone=UTC
+    username: maimaiAPI
+    password: hcskia
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml

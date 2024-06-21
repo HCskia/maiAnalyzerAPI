@@ -73,9 +73,9 @@ public class TokenUtli {
 
 
 
-    public static boolean VerifyJWTToken(String webToken) throws Exception
+    public static Map<String, Claim> VerifyJWTToken(String webToken) throws Exception
     {
-        String[] token = webToken.split(" ");
+        String[] token = webToken.split("Authorization=");
         if (token[1].equals("")) {throw new Exception("token错误");}
 
         //JWT验证器
@@ -86,7 +86,7 @@ public class TokenUtli {
         List<String> audienceList = jwt.getAudience();
         String audience = audienceList.get(0);
         //Payload
-//        Map<String, Claim> claimMap = jwt.getClaims();
+        Map<String, Claim> claimMap = jwt.getClaims();
 //        for (Map.Entry<String, Claim> entry : claimMap.entrySet())
 //        {
 //
@@ -96,6 +96,6 @@ public class TokenUtli {
         //过期时间
         Date expiresTime = jwt.getExpiresAt();
 
-        return true;
+        return claimMap;
     }
 }
